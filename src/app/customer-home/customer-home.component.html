@@ -1,0 +1,37 @@
+<app-navbar-c></app-navbar-c>
+<!-- <div class="input-group" style="width: 70%;margin: 0 auto;margin-top: 20px;">
+  <input type="search" [(ngModel)]="s_text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+</div> -->
+<div style="margin: 0 auto; margin-top: 30px; text-align: center; ">
+<div class="box-search" style="margin-top: 20px; text-align: center; display: inline;">
+  <input   type="search" [(ngModel)]="s_text" placeholder="Search..." >
+  <a href="#">
+      <i style="color: #ac905b;" class="fas fa-search"></i>
+  </a> 
+</div>
+<div ngbDropdown  class="dropdown" style="margin-left: 10px; display: inline;">
+  <button ngbDropdownToggle  class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">{{cat_filter}}
+  </button>
+<div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <a ngbDropdownItem (click)="choose('None')" href="javascript:void(0)" class="dropdown-item" >None</a>
+  <a ngbDropdownItem (click)="choose('SeaFood')" href="javascript:void(0)" class="dropdown-item" >SeaFood</a>
+  <a ngbDropdownItem (click)="choose('Grills')" href="javascript:void(0)" class="dropdown-item" >Grills</a>
+  <a ngbDropdownItem (click)="choose('FiredChicken')" href="javascript:void(0)" class="dropdown-item" >FiredChicken</a>
+  <a ngbDropdownItem (click)="choose('Burger')" href="javascript:void(0)" class="dropdown-item" >Burger</a>
+  <a ngbDropdownItem (click)="choose('Pizza')" href="javascript:void(0)" class="dropdown-item" >Pizza</a>
+  <a ngbDropdownItem (click)="choose('Desserts')" href="javascript:void(0)" class="dropdown-item" >Desserts</a>
+</div>
+</div>
+</div>
+
+<div *ngFor="let i of s_array">
+<div class="card bg-dark text-white" style="width: 60%;margin: 0 auto;margin-top: 20px;" >
+  <img class="card-img" src={{i.image}} alt="Card image" style="height: 300px;">
+  <div class="card-img-overlay" (click)="gotores(i._id)">
+    <h1 style="color: #d2b682; font-weight: bold; font-family: 'Times New Roman', Times, serif;" class="card-title">{{i.name.toUpperCase()}}</h1>
+    <p style="color: burlywood;" class="card-text">{{i.description}}</p>
+    <p style="color: blanchedalmond;" class="card-text">{{i.foodCategory}}</p>
+  </div>
+</div>
+</div>

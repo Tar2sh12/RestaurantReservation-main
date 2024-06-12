@@ -1,0 +1,19 @@
+loginsignup 
+uploadimage
+customer --------------------------
+getallrestaurants api/restaurants
+getrestaurant api/getRestaurant : { restaurantId }
+createreservation api/createReservation : { customerId,reservationName,restaurantId,numberOfSeats,reservationTime }
+updateReservation api/updateReservation : { reservationId,numberOfSeats, reservationTime }
+deleteReservation api/deleteReservation : { reservationId }
+getallres api/getallReservations : {customerId}
+-------------------------------------
+
+vendor----------------------------
+getmyrestaurants api/vendors/getMyRestaurants
+getrestaurant api/vendors/getRestaurant
+createrestaurant api/createRestaurant
+updaterestaurant api/updateRestaurant
+deleterestaurant api/deleteRestaurant
+getreservations api/getRestReservations
+cancelreservation api/cancelReservation

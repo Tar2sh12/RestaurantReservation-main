@@ -1,0 +1,30 @@
+
+<app-navbar-c></app-navbar-c>
+<div class="form-div" id="resForm" style="width:70% ; margin-top: 20px; margin: auto;" >
+    <h1 style="text-align: center;">Update Reservation</h1>
+    <form  class="signin-form" style="margin-top: 100px;">
+  
+  <div class="form-group mb-3">
+  <label class="label" >Special Request</label>
+  <input type="text" class="form-control" placeholder="N/A">
+  </div>
+  <div class="form-group mb-3">
+  <label class="label" >Number Of Chairs <p>(Max 6 Chairs Per Table)</p></label>
+  <input type="number" class="form-control" placeholder="1" required min="1" max="100">
+  </div>
+  <div ngbDropdown  class="dropdown">
+  <button ngbDropdownToggle  class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+  </button>
+  
+  <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div *ngFor="let i of ">
+    <a ngbDropdownItem  href="javascript:void(0)" class="dropdown-item" >{{i}}</a>
+  </div>
+  </div>
+  </div>
+  <div class="form-group" style="margin-top: 20px;">
+  <button type="submit" class="form-control btn btn-primary rounded submit px-3" style="background-color: rgb(0, 0, 0);" >UPDATE</button>
+  </div>
+  </form>
+  </div>

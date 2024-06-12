@@ -1,0 +1,86 @@
+<app-navbar-v></app-navbar-v>
+
+<head>
+    <title>Add New Restaurant</title>
+</head>
+
+<div class="form-div" id="resForm" style="margin: auto">
+    <h1 style="text-align: center;">{{title}}</h1>
+    <form class="signin-form" style="margin-top: 10px;">
+        <div style="display: flex; justify-content: center; margin-top: 10px;"><img style="width: 1000px;height:500px; " [src]="image ? image :'https://th.bing.com/th/id/OIP.QrR56voakzVibJnCtTWw7gHaEK?rs=1&pid=ImgDetMain'"></div> <!--for previewing image-->
+        <div class="form-group mb-3">
+            <label class="label">Image :</label>
+            <input  (change)="uploadImage($event)" type="file"  class="form-control" id="image"
+                required>
+        </div>
+        <div class="form-group mb-3">
+            <label class="label">Restaurant Name :</label>
+            <input type="text" [(ngModel)]="restaurantName" [ngModelOptions]="{standalone: true}" class="form-control"
+                placeholder="Restaurant Name" required>
+        </div>
+        <div class="form-group mb-3">
+            <label class="label">Description :</label>
+            <input type="text" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="form-control"
+                placeholder="Restaurant Description" required>
+        </div>
+        <div ngbDropdown class="dropdown" style="margin-left: 10px; display: inline;">
+
+            <button ngbDropdownToggle class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Food Category : {{foodCategory}}
+            </button>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a ngbDropdownItem (click)="choose('None')" href="javascript:void(0)" class="dropdown-item">None</a>
+                <a ngbDropdownItem (click)="choose('SeaFood')" href="javascript:void(0)"
+                    class="dropdown-item">SeaFood</a>
+                <a ngbDropdownItem (click)="choose('Grills')" href="javascript:void(0)" class="dropdown-item">Grills</a>
+                <a ngbDropdownItem (click)="choose('FiredChicken')" href="javascript:void(0)"
+                    class="dropdown-item">FiredChicken</a>
+                <a ngbDropdownItem (click)="choose('Burger')" href="javascript:void(0)" class="dropdown-item">Burger</a>
+                <a ngbDropdownItem (click)="choose('Pizza')" href="javascript:void(0)" class="dropdown-item">Pizza</a>
+                <a ngbDropdownItem (click)="choose('Desserts')" href="javascript:void(0)"
+                    class="dropdown-item">Desserts</a>
+            </div>
+        </div>
+        <!--add num of tables-->
+        <div class="form-group mb-3">
+            <label class="label">Number of Tables :</label>
+            <input type="number" [(ngModel)]="numOfTable" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+        <!--add num of seats-->
+        <div class="form-group mb-3">
+            <label class="label">Number of Seats :</label>
+            <input type="number" [(ngModel)]="numOfSeat" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+        <!--add timeslots-->
+        <button type="button" (click)="addtimeSlot()" class="btn btn-secondary">Add TimeSlot</button>
+        <div *ngFor="let i of divs;let x = index">
+            <label class="label">TimeSlot {{x+1}}:</label>
+            <input type="text" [(ngModel)]="timeSlots[x]" [ngModelOptions]="{standalone: true}">
+            <div>
+                <button type="submit" (click)="deletetimeSlot(i)" class="btn btn-secondary">Delete</button>
+            </div>
+        </div>
+        <!--Add location-->
+        <h4>Location</h4>
+        <ul>
+            <li Style="display: inline-block; margin-right: 20px;">
+                <div class="form-group mb-3">
+                    <label class="label">longitude:</label>
+                    <input type="number" [(ngModel)]="longitude" [ngModelOptions]="{standalone: true}"
+                        class="form-control" placeholder="1" required min="1" max="100">
+                </div>
+            </li>
+            <li Style="display: inline-block;">
+                <div class="form-group mb-3">
+                    <label class="label">latitude: </label>
+                    <input type="number" [(ngModel)]="latitude" [ngModelOptions]="{standalone: true}"
+                        class="form-control" placeholder="1" required min="1" max="100">
+                </div>
+            </li>
+        </ul>
+        <div class="form-group" style="margin-top: 20px;">
+            <button type="submit" class="form-control btn btn-primary rounded submit px-3" (click)="submit()"
+                style="background-color: rgb(0, 0, 0);">{{buttonText}}</button>
+        </div>
+    </form>
+</div>

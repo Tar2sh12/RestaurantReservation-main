@@ -1,0 +1,41 @@
+.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.471);
+  transition: opacity 0.0s ease-in-out;
+  cursor: pointer;
+}
+.card:hover .card-img-overlay {
+  opacity: 0; /* Change the opacity value for the hover effect */
+}
+.box-search{
+  width:4.5%;
+  height: 30;
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.3);
+}
+.box-search:hover input{
+  width: 400px;
+}
+.box-search:hover{
+ width:400px
+}
+.box-search {
+  width: 4.5%;
+  transition: 0.8s;
+}
+.box-search input{
+  width: 0;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+.box-search a .fas{
+  color: var(--green);
+  font-size: 18px;
+}

@@ -1,0 +1,22 @@
+<app-navbar-v></app-navbar-v>
+
+<!-- <div class="input-group" style="width: 70%;margin: 0 auto;margin-top: 20px;">
+    <input type="search" [(ngModel)]="s_text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+</div> -->
+<div *ngFor="let i of restaurants;let x= index">
+
+    <div class="card bg-dark text-white" style="width: 60%;margin: 0 auto;margin-top: 20px;">
+        <img class="card-img" src={{i.image}} alt="Card image" style="height: 300px;">
+        <div class="card-img-overlay">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">{{i.description}}</p>
+            <p class="card-text">No. of Tables:{{i.numTables}}</p>
+            <p class="card-text">{{i.foodCategory}}</p>
+            <button class="btn btn-dark my-2 my-sm-0"
+                style="background-color: rgb(151, 81, 31); border: none; margin-right: 5px;"
+                (click)="updateRestaurant(x)">UPDATE</button>
+            <button class="btn btn-outline-danger my-2 my-sm-0" (click)="deleteRestaurant(x)">Delete</button>
+        </div>
+    </div>
+
+</div>

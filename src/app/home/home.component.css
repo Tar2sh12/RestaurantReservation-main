@@ -1,0 +1,16 @@
+.background-div {
+    background-image: url('../../assets/clem-onojeghuo-zlABb6Gke24-unsplash.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(56, 56, 56);
+    text-align: center;
+  }
+
+.custom:hover {
+    color: #FFFFFF; /* Change text color on hover */
+    background-color: #562f04;
+  }

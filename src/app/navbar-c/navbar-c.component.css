@@ -1,0 +1,25 @@
+.icons i,
+.icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 2.0rem;
+    line-height: 2.0rem;
+    width: 2.0rem; 
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+
+.icons i:hover,
+.icons a:hover{
+    color: #ffffff;
+    background: burlywood;
+    transform: rotate(360deg);
+}
+
+.btn-outline-secondary:hover
+{
+    background-color: #ac905b;
+}

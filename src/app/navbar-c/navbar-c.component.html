@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0;" >
+  <i class="fas fa-utensils" style="margin-left: 5px; margin-right: 5px;"></i><a class="navbar-brand" routerLink="/customer_h" style="font-family:'Times New Roman', Times, serif;">Restaurants</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-secondary" style=" height:100%;padding: 3; border: none; border-radius: 0;" routerLink="/customer_h">HOME</button>
+            <!-- <button type="button" class="btn btn-outline-secondary" style="height: 100;" routerLink="/myReservations">My reservations</button> -->
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-secondary" style=" height:100%;padding: 3; border: none; border-radius: 0;" routerLink="/map">Restaurants on map</button>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex align-items-center ml-auto" >
+        <div class="icons" style="margin-right:20px ;" >
+          <a href="javascript:void(0)"  routerLink="/myReservations" class="fas  fas fa-clipboard-check"  title="My Reservations"></a>
+      </div>
+        <span class="navbar-text" style="margin-right: 10px;">
+          Hello! {{username}}
+        </span>
+        <button  class="btn btn-outline-secondary" style=" height:100%;padding: 3; border: none; border-radius: 0;" (click)="logout()">Logout</button>
+      </div>
+</nav>
+

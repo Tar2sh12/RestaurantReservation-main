@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "restaurantsnotification": {
+      "hosting": {
+        "FrontEnd": [
+          "restaurantsnotification"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "restaurantsnotification"
+  }
+}

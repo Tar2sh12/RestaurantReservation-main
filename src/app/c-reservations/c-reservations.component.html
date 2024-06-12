@@ -1,0 +1,19 @@
+<app-navbar-c></app-navbar-c>
+<div *ngFor="let i of res,let x=index" style="display: inline-block;">
+<div class="card" style="width: 18rem; display: inline-block; margin-left: 10px; margin-right: 10px; margin-top: 20px; background-image:url('../../assets/alena-plotnikova-mAHzkCjWc20-unsplash.jpg'); background-size: cover; background-position: center;">
+    <div class="card-overlay" style="background-color: rgba(0, 0, 0, 0.07);">
+    <div class="card-body">
+      <h3 class="card-title " style=" font-weight:bolder; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:bisque;">{{restName[x]}}</h3>
+      <div class="card-subtitle mb-2 text-muted">
+        <img style="margin-right: 2px;" src="../../assets/clock-circle-svgrepo-com.svg" width="25px" height="25px">
+        <p class="text-white" style=" font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif; display: inline-block; margin-right: 5px;">{{i.reservationTime}}</p>
+        <img width="25px" height="25px" style="margin-right: 2px;" src="../../assets/chair-svgrepo-com.svg">
+        <p class="text-white" style="display: inline-block; font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif;">{{i.numberOfSeats}}</p>
+      </div>
+      <p class="card-text" style="color: white;">{{i.sepcialReq}}</p>
+      <button class="btn btn-dark my-2 my-sm-0" style="background-color: rgb(151, 81, 31); border: none; margin-right: 5px;" (click)="updateRes(x)">UPDATE</button>
+      <button class="btn btn-outline-danger my-2 my-sm-0" (click)="deleteRes(x)">Cancel</button>
+    </div>
+</div>
+</div>
+</div>
